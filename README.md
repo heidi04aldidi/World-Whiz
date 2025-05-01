@@ -11,7 +11,7 @@ Welcome to **WorldWhiz**! Your go-to destination for exploring the details of co
 
 ## Demo 🚀
 
-Check out the live demo of **WorldWhiz** and start exploring the world by searching for any country. [Live Demo Link] (add your demo link here)
+Check out the live demo of **WorldWhiz** and start exploring the world by searching for any country. [https://world-whiz-app-alpha.vercel.app/]
 
 ## Technologies Used 🛠️
 
