@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom right, #d7c4a3, #f4e5c3, #bfa98f);
+    color: #3c2f23;
+}
+
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom right, #d7c4a3, #f4e5c3, #bfa98f);
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #4b3823;
+    text-shadow: 2px 2px #e9d8b4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 65%;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    border: 2px solid #d3a87c;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    background-color: #fdf6e3;
+    color: #704214;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-wrapper input:focus {
+    outline: none;
+    border-color: #e0a96d;
+    box-shadow: 0 0 10px #f3c98b;
+}
+
+.search-wrapper input::placeholder {
+    color: #b2825e;
+    font-style: italic;
+    animation: fadeInPlaceholder 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInPlaceholder {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #b57743;
+    pointer-events: none;
+}
+
+.search-form {
+    display: none;
+}
+
+.loading,
+.error {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+.result-container {
+    margin-top: 40px;
+    background-color: #fef9f2;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #c8b597;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.result-container img {
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.typewriter-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4B2E2B;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgba(75, 46, 43, 0.75);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.typewriter-text {
+    display: inline-block;
+    animation: typing 2.8s steps(14), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 14ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.fade-in-delay {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .typewriter-title {
+        font-size: 2.2rem;
+    }
+
+    .search-wrapper {
+        width: 85%;
+        margin: 1.5rem auto;
+    }
+
+    .search-wrapper input {
+        font-size: 1rem;
+        padding: 0.7rem 2.5rem 0.7rem 1rem;
+    }
+
+    .search-icon {
+        font-size: 1rem;
+    }
+
+    .result-container {
+        margin-top: 30px;
+        padding: 15px;
+        width: 90%;
+    }
+
+    .result-container img {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .typewriter-title {
+        font-size: 1.8rem;
+    }
+
+    .search-wrapper input {
+        font-size: 0.95rem;
+        padding: 0.6rem 2rem 0.6rem 0.9rem;
+    }
+
+    .search-icon {
+        right: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .result-container {
+        padding: 12px;
+    }
+}

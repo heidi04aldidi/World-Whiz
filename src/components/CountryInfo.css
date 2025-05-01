@@ -1,0 +1,153 @@
+.country-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.flip-card {
+    background: transparent;
+    width: 75vw;
+    max-width: 1000px;
+    height: 500px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.flip-card-front {
+    background: linear-gradient(to bottom right, #fdf6e3, #fae1c4);
+}
+
+.flip-card-back {
+    background: linear-gradient(to bottom right, #ffe9d6, #ffe1cb);
+    transform: rotateY(180deg);
+}
+
+.country-name {
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    color: #b85c38;
+    margin-bottom: 1rem;
+}
+
+.country-flag {
+    width: 120px;
+    height: auto;
+    border: 3px solid #e5b299;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.weather-info h3 {
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+    color: #904c2d;
+}
+
+.weather-info p {
+    color: #5c3d2e;
+}
+
+.glimpses-title {
+    font-size: 1.5rem;
+    color: #a95d39;
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif;
+}
+
+.glimpses-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0 10px;
+}
+
+.glimpse-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.glimpse-img:hover {
+    transform: scale(1.05);
+}
+
+.flip-hint {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #8c5a3a;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .flip-card {
+        width: 90vw;
+        height: 400px;
+    }
+
+    .country-name {
+        font-size: 1.6rem;
+    }
+
+    .country-flag {
+        width: 100px;
+    }
+
+    .glimpses-title {
+        font-size: 1.3rem;
+    }
+
+    .glimpse-img {
+        height: 120px;
+    }
+
+    .flip-hint {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card {
+        width: 100vw;
+        height: 350px;
+    }
+
+    .glimpses-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .glimpse-img {
+        height: 100px;
+    }
+}
